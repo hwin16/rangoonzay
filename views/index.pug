@@ -1,5 +1,101 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  .container-fluid
+    .row
+      .col-8
+        div(id="accordion")
+          div(class="card mt-2 bg-white shadow rounded")
+            h5(class="card-header" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseProduct") Product
+            div(id="collapseProduct" class="collapse" aria-labelledby="collapseProduct" data-parent="#accordion")
+              .card-body Content to be added.
+          div(class="card mt-2 bg-white shadow rounded")
+            h5(class="card-header" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer") Customer
+            div(id="collapseCustomer" class="collapse show" aria-labelledby="collapseCustomer" data-parent="#accordion")
+              .card-body 
+                .form
+                  h5 Transaction Form 
+                  form(action="" class="needs-validation" novalidate)
+                    .row 
+                      .col-md-6.mb-3
+                        label(for="name") Name
+                        input(type="text" class="form-control" id="name" name="name" required)
+                        .invalid-feedback Valid first name is required.
+                      .col-md-6.mb-3
+                        label(for="facebookName") Facebook Name
+                          span.text-muted  (Optional)
+                        input(type="text" class="form-control" id="facebookName" name="facebookName")
+                    .mb-3
+                      label(for="address") Address
+                      input(type="text" class="form-control" id="address" name="address[]" required)
+                      .invalid-feedback Valid address is required.
+                    .row
+                      .col-md-4.mb-3  
+                        label(for="city") City
+                        select(class="custom-select d-block w-100" id="city" required)
+                          option(value="yangon" selected) Yangon
+                          option(value="mandalay") Mandalay
+                      .col-md-4.mb-3
+                        label(for="state") State
+                        select(class="custom-select d-block w-100" id="state" required)
+                          option(value="yangon" selected) Yangon
+                          option(value="mandalay") Mandalay
+                      .col-md-4.mb-3
+                        label(for="country") Country
+                        select(class="custom-select d-block w-100" id="state" required)
+                          option(value="myanmar" selected) Myanmar 
+                    .mb-3
+                      label(for="address2") Address 2
+                        span.text-muted   (Optional)
+                      input(type="text" class="form-control" id="address2" name="address[]")
+                    .row
+                      .col-md-6.mb-3
+                        label(for="phoneNumber") Phone Number
+                        input(type="number" class="form-control" id="phoneNumber" name="phoneNumber[]" required)
+                        .invalid-feedback Valid phone number is required.
+                      .col-md-6.mb-3
+                        label(for="phoneNumber2") Phone Number 2
+                          span.text-muted  (Optional)
+                        input(type="number" class="form-control" id="phoneNumber2" name="phoneNumber[]")
+                    .mb-3
+                      label(for="email") Email
+                        span.text-muted  (Optional)
+                      input(type="email" class="form-control" id="email" name="email")
+                    hr.mb-4
+                    button(class="btn btn-success btn-lg btn-block" type="submit") Checkout
+          div(class="card mt-2 bg-white shadow rounded")
+            h5(class="card-header" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt") Payment
+            div(id="collapsePayment" class="collapse" aria-labelledby="collapsePayment" data-parent="#accordion")
+              .card-body Content to be added.
+          div(class="card mt-2 bg-white shadow rounded")
+            h5(class="card-header" data-toggle="collapse" data-target="#collapseReview" aria-expanded="true" aria-controls="collapseReview") Review
+            div(id="collapseReview" class="collapse" aria-labelledby="collapseReview" data-parent="#accordion")
+              .card-body Content to be added.
+          
+                
+        
+
+      .col-4
+        h4("d-flex justify-content-between align-items-center mb-3") 
+          span.text-muted Your Cart
+          span(class="badge badge-secondary badge-pill" style="float: right;") 3
+        ul.list-group
+          li(class="list-group-item d-flex justify-content-between lh-condensed")
+            div 
+              h6.my-0 Product Name
+              small.text-muted Brief Description
+            span.text-muted $12
+          li(class="list-group-item d-flex justify-content-between lh-condensed")
+            div 
+              h6.my-0 Second Product Name
+              small.text-muted Brief Description
+            span.text-muted $6
+          li(class="list-group-item d-flex justify-content-between lh-condensed")
+            div 
+              h6.my-0 Third Product Name
+              small.text-muted Brief Description
+            span.text-muted $2
+          li(class="list-group-item d-flex justify-content-between lh-condensed")
+            span Total (USD)
+            strong $20
