@@ -20,7 +20,29 @@ exports.contact_create = (req, res, next) => {
             return contact.save(); 
         })
         .then(data => { 
-            res.json({ data: contact });
+            res.json({ error: null, data: contact });
+        })
+        .catch(err => { 
+            res.json({ error: err });
+        });
+};
+
+exports.contact_delete = (req, res, next) => { 
+    const _contact_id = mongoose.Types.ObjectId(req.params.contact_id);
+    Contact.findByIdAndRemove(_contact_id)
+        .then(data => {
+            res.json({ error: null });
+        })
+        .catch(err => { 
+            res.json({ error: err });
+        });
+};
+
+exports.contact_update = (req, res, next) => { 
+    const _contact_id = mongoose.Types.ObjectId(req.params.contact_id);
+    Contact.findByIdAndUpdate(req.params.id, { $set: req.body })
+        .then(data => {
+            res.json({ error: null, data: data });
         })
         .catch(err => { 
             res.json({ error: err });

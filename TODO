@@ -1,0 +1,3 @@
+* strong username and pwd for mongo atlas
+* models/contact => contact is temporary solution. need to delete later
+* models/transaction => need to reference discount coupon table in the future
