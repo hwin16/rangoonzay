@@ -3,6 +3,8 @@ const Contact = require('../models/contact');
 const User = require('../models/user');
 
 exports.contact_create = (req, res, next) => { 
+    console.log(req.params);
+    console.log(req.body);
     const contact = new Contact({ 
         name: req.body.name, 
         date_of_birth: req.body.date_of_birth,

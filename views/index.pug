@@ -8,48 +8,63 @@ block content
         div(id="accordion")
           div(class="card mt-2 bg-white shadow rounded")
             h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseProduct") Product
-            div(id="collapseProduct" class="collapse" aria-labelledby="collapseProduct" data-parent="#accordion")
+            div(id="collapseProduct" class="collapse show" aria-labelledby="collapseProduct" data-parent="#accordion")
               .card-body 
-                ul.list-unstyled
-                  li.media
-                    img(src="images/ax.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                    .media-body 
-                      h6.mt-3 A|X Bomber Jacket
-                        span 
-                          button.btn.btn-outline-dark.btn-sm.float-right ADD
-                      p $200
-                  hr
+                .row 
+                  .col-6
+                    label(for="productName") Product Name
+                    input(type="text" class="form-control" id="productName" name="productName" required)
+                  .col-2
+                    label(for="quantity") Quantity
+                    input(type="number" class="form-control" id="quantity" name="quantity" required)
+                  .col 
+                    label(for="price") Price
+                    .input-group
+                      input(type="number" class="form-control" id="quantity" name="quantity" required)
+                      .input-group-append
+                        span(class="input-group-text") MMK
+                hr
+                button(class="btn btn-outline-dark float-right mb-3" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer" type="button") Continue  
 
-                  li.media.my-2
-                    img(src="images/ax1.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                    .media-body 
-                      h6.mt-3 A|X Jacket with Hood
-                        span 
-                          button.btn.btn-outline-dark.btn-sm.float-right ADD
-                      p $180
-                  hr
+                //- ul.list-unstyled
+                //-   li.media
+                //-     img(src="images/ax.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
+                //-     .media-body 
+                //-       h6.mt-3 A|X Bomber Jacket
+                //-         span 
+                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
+                //-       p $200
+                //-   hr
 
-                  li.media.my-2
-                    img(src="images/ax2.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                    .media-body 
-                      h6.mt-3 A|X Bomber in Logo Fabric
-                        span 
-                          button.btn.btn-outline-dark.btn-sm.float-right ADD
-                      p $320
-                  hr
-                button(class="btn btn-outline-dark float-right mb-3" type="submit") Continue    
+                //-   li.media.my-2
+                //-     img(src="images/ax1.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
+                //-     .media-body 
+                //-       h6.mt-3 A|X Jacket with Hood
+                //-         span 
+                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
+                //-       p $180
+                //-   hr
+
+                //-   li.media.my-2
+                //-     img(src="images/ax2.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
+                //-     .media-body 
+                //-       h6.mt-3 A|X Bomber in Logo Fabric
+                //-         span 
+                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
+                //-       p $320
+                //-   hr
+                  
 
           div(class="card mt-2 bg-white shadow rounded")
             h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer") Customer
-            div(id="collapseCustomer" class="collapse show" aria-labelledby="collapseCustomer" data-parent="#accordion")
+            div(id="collapseCustomer" class="collapse" aria-labelledby="collapseCustomer" data-parent="#accordion")
               .card-body 
                 .form
-                  form(action="" class="needs-validation" novalidate)
+                  form(action="/shops/:shop_id/contacts/create" class="needs-validation" method="post" novalidate)
                     .row 
                       .col-md-6.mb-3
                         label(for="name") Name
                         input(type="text" class="form-control" id="name" name="name" required)
-                        .invalid-feedback Valid first name is required.
                       .col-md-6.mb-3
                         label(for="facebookName") Facebook Name
                           span.text-muted  (Optional)
@@ -73,25 +88,28 @@ block content
                         label(for="country") Country
                         select(class="custom-select d-block w-100" id="state" required)
                           option(value="myanmar" selected) Myanmar 
-                    //- .mb-3
-                    //-   label(for="address2") Address 2
-                    //-     span.text-muted   (Optional)
-                    //-   input(type="text" class="form-control" id="address2" name="address[]")
+                    .mb-3
+                      label(for="address2") Address 2
+                        span.text-muted   (Optional)
+                      input(type="text" class="form-control" id="address2" name="address[]")
                     .row
                       .col-md-6.mb-3
                         label(for="phoneNumber") Phone Number
-                        input(type="number" class="form-control" id="phoneNumber" name="phoneNumber[]" required)
+                        input(type="number" class="form-control" id="phoneNumber" name="phone_numbers[phone_number]{}" required)
                         .invalid-feedback Valid phone number is required.
                       .col-md-6.mb-3
                         label(for="phoneNumber2") Phone Number 2
                           span.text-muted  (Optional)
-                        input(type="number" class="form-control" id="phoneNumber2" name="phoneNumber[]")
+                        input(type="number" class="form-control" id="phoneNumber2" name="phone_numbers[phone_number]{}")
                     .mb-3
                       label(for="email") Email
-                        span.text-muted  (Optional)
-                      input(type="email" class="form-control" id="email" name="email")
+                        span.text-muted  (Optional) 
+                      .input-group
+                          .input-group-prepend
+                            span(class="input-group-text") @
+                          input(type="email" class="form-control" id="email" name="email" required)
                     hr
-                    button(class="btn btn-outline-dark float-right mb-3" type="submit") Continue
+                    button(class="btn btn-outline-dark float-right mb-3" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt" type="button") Continue
           div(class="card mt-2 bg-white shadow rounded")
             h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt") Payment
             div(id="collapsePayment" class="collapse" aria-labelledby="collapsePayment" data-parent="#accordion")
