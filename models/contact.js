@@ -10,22 +10,13 @@ const ContactSchema = new mongoose.Schema({
     },
     name: String, 
     date_of_birth: Date, 
-    phone_numbers: [{ 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'PhoneNumber' 
-    }],
-    addresses: [{ 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Address' 
-    }],
+    phone_number1: Number,
+    address1: String,
+    city: String, 
+    state: String, 
+    country: String,
     facebook_name: String, 
     facebook_url: String
 }); 
-
-ContactSchema.pre('remove', function(next) { 
-    PhoneNumber.deleteMany({ _id: { $in: this.phone_numbers }}).exec();
-    Address.deleteMany({ _id: { $in: this.addresses }}).exec();
-    next();
-});
 
 module.exports = mongoose.model('Contact', ContactSchema);

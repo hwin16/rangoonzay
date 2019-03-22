@@ -1,73 +1,78 @@
-const _ = require('underscore');
+const underscore = require('underscore');
 const mongoose = require('mongoose');
-const Contact = require('../models/contact'); 
+const Contact = require('../models/contact');
 const User = require('../models/user');
-const PhoneNumber = require('../models/phonenumber');
-const Address = require('../models/address');
 
-exports.contact_create = async (req, res) => { 
-    const phone_numbers = (await PhoneNumber.create(
-        req.body.phone_numbers)).map(v => v.id);
-    const addresses = (await Address.create(
-        req.body.addresses)).map(v => v.id);
-    const contact = new Contact(_.extend(req.body, { 
-        addresses: addresses, 
-        phone_numbers: phone_numbers,
-        shop_id: mongoose.Types.ObjectId(req.params.shop_id)
-    }));
-
-    try { 
-        const new_contact = await contact.save(); 
+exports.contact_create = async (req, res) => {
+    try {
+        const contact_data = underscore.extend(req.body, {
+            shop_id: req.params.shop_id
+        });
+        const new_contact = await new Contact(contact_data).save();
         res.json({ error: null, data: new_contact });
     }
-    catch(err) { 
+    catch (err) {
         res.json({ error: err});
     }
 };
 
-exports.contact_delete = async (req, res) => { 
-    const _contact_id = mongoose.Types.ObjectId(
-        req.params.contact_id);
-    try { 
-        const removed_contact = await Contact.findById(_contact_id); 
-        removed_contact.remove();
+exports.contact_delete = async (req, res) => {
+    try {
+        const contact_id = mongoose.Types.ObjectId(
+            req.params.contact_id);
+        const removed_contact = await Contact.findByIdAndDelete(contact_id);
         res.json({ error: null, data: removed_contact });
     }
-    catch(err) { 
+    catch(err) {
         res.json({ error: err });
     };
 };
 
-exports.contact_update = (req, res, next) => { 
+exports.contact_update = async (req, res, next) => {
     // TODO: never let you to update shop_id
-};
-
-exports.contact_list = async (req, res) => { 
-    const _shop_id = mongoose.Types.ObjectId(
-        req.params.shop_id);
-    try { 
-        const contacts = await Contact.find({ shop_id: _shop_id })
-            .populate('phone_numbers')
-            .populate('addresses')
-            .exec();
-        res.json({ error: null, data: contacts });
+    try {
+        const contact_id = mongoose.Types.ObjectId(
+            req.params.contact_id);
+        const shop_id = mongoose.Types.ObjectId(
+            req.params.shop_id); 
+        const updated_data = underscore.extend(
+            req.body, 
+            { shop_id: shop_id }
+        );
+        const updated_contact = await Contact.findByIdAndUpdate(
+            contact_id, 
+            updated_data
+        ); 
+        res.json({ error: null, data: updated_contact });
     }
-    catch(err) { 
+    catch(err) {
         res.json({ error: err });
     }
 };
 
-exports.contact_detail = async (req, res) => { 
-    const _contact_id = mongoose.Types.ObjectId(
-        req.params.contact_id);
-    try { 
-        const contact = await Contact.findById(_contact_id)
-            .populate('phone_numbers')
-            .populate('addresses')
-            .exec(); 
+exports.contact_list = async (req, res, next) => {
+    try {
+        const shop_id = mongoose.Types.ObjectId(
+            req.params.shop_id);
+        const contacts = await Contact.find({ shop_id: shop_id })
+            .exec();
+        console.log(contacts);
+        res.render('contact', { error: null, data: contacts });
+    }
+    catch(err) {
+        res.json({ error: err });
+    }
+};
+
+exports.contact_detail = async (req, res) => {
+    try {
+        const contact_id = mongoose.Types.ObjectId(
+            req.params.contact_id);
+        const contact = await Contact.findById(contact_id)
+            .exec();
         res.json({ error: null, data: contact });
     }
-    catch (err) { 
+    catch (err) {
         res.json({ error: err });
     }
 };

@@ -1,0 +1,30 @@
+extends layout
+block content
+  .container
+    table.table
+      tr
+        th Name
+        th Date Of Birth
+        th Primary Phone Number
+        th Address1
+        th City
+        th State
+        th Country
+        th Facebook Profile
+      tr
+        // if error
+        // TODO -- facebook name should combine with facebook url
+        if err
+          p Something wrong
+        else
+          for val in data
+            tr
+              td= val.name
+              td= val.date_of_birth
+              td= val.phone_number1
+              td= val.address1
+              td= val.city
+              td= val.state
+              td= val.country
+              td
+                a(href=val.facebook_url) #{val.facebook_name}
