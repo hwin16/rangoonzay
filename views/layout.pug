@@ -8,8 +8,48 @@ html
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js", integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js", integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", crossorigin="anonymous")
-    script(tyoe="text/javascript" src="/javascript/form-validation.js")
+    script(src="/javascript/jquery.flexdatalist.min.js")
   body
+
+    script.
+      let d = [ 
+            {
+                "name": "Myanmar", 
+                "capital": "yangon",
+                "continent": "asia",
+                "img": "https://dynamic.zacdn.com/d3kfTdUmZH3RnXI82eNpEhpasqc=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/bonia-1586-1393741-1.jpg"
+            }, 
+            {
+                "name": "Morocco", 
+                "capital": "yangon",
+                "continent": "asia",
+                "img": "https://dynamic.zacdn.com/d3kfTdUmZH3RnXI82eNpEhpasqc=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/bonia-1586-1393741-1.jpg"
+            }, 
+            {
+                "name": "Thailand", 
+                "capital": "bangkok",
+                "continent": "asia",
+                "img": "https://dynamic.zacdn.com/d3kfTdUmZH3RnXI82eNpEhpasqc=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/bonia-1586-1393741-1.jpg"
+            }, 
+            {
+                "name": "Singapore", 
+                "capital": "singapore",
+                "continent": "asia",
+                "img": "https://dynamic.zacdn.com/d3kfTdUmZH3RnXI82eNpEhpasqc=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.my.zalora.net/p/bonia-1586-1393741-1.jpg"
+            }, 
+        ];
+
+      $('.flexdatalist').flexdatalist({
+            minLength: 1,
+            selectionRequired: true,
+            visibleProperties: ["img", "name", "capital", "continent"],
+            iconProperty: "img",
+            searchIn: 'name',
+            data: d 
+        });
+
+      $('.item-img').addClass('border border-light');
+
 
     nav(class="navbar navbar-expand-md navbar-light d-flex flex-row-reverse" id="top-nav")
       div(class="navbar-nav")
@@ -22,7 +62,7 @@ html
       .row  
         .col-sm-2
           nav(class="nav flex-column")
-            a(class="nav-item nav-link active" href="")
+            a(class="nav-item nav-link active mt-1" href="")
               div
                 i(class="fas fa-credit-card fa-lg")
               div
