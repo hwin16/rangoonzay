@@ -11,18 +11,22 @@ block content
             div(id="collapseProduct" class="collapse show" aria-labelledby="collapseProduct" data-parent="#accordion")
               .card-body 
                 .row 
-                  .col-6
+                  .col-lg-5
                     label(for="productName") Product Name
-                    input(type="text" class="form-control" id="productName" name="productName" required)
-                  .col-2
+                    input(type="text" class="form-control" data-min-length='1' id="productName" name="productName" required)
+                  .col-lg-2
                     label(for="quantity") Quantity
                     input(type="number" class="form-control" id="quantity" name="quantity" required)
-                  .col 
+                  .col-lg-5
                     label(for="price") Price
                     .input-group
                       input(type="number" class="form-control" id="quantity" name="quantity" required)
                       .input-group-append
                         span(class="input-group-text") MMK
+                      span 
+                        button(class="btn btn-outline-dark ml-2") ADD
+                  
+                    
                 hr
                 button(class="btn btn-outline-dark float-right mb-3" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer" type="button") Continue  
 
@@ -53,7 +57,7 @@ block content
                 //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
                 //-       p $320
                 //-   hr
-                  
+           
 
           div(class="card mt-2 bg-white shadow rounded")
             h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer") Customer
@@ -114,11 +118,13 @@ block content
             h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt") Payment
             div(id="collapsePayment" class="collapse" aria-labelledby="collapsePayment" data-parent="#accordion")
               .card-body Content to be added.
-          div(class="card mt-2 mb-2 bg-white rounded")
+          div(class="card mt-2 mb-2 bg-white shadow rounded")
             h6(class="card-header secondary bg-light text-center" data-toggle="collapse" data-target="#collapseReview" aria-expanded="true" aria-controls="collapseReview") Review
             div(id="collapseReview" class="collapse" aria-labelledby="collapseReview" data-parent="#accordion")
               .card-body Content to be added.
-          
+
+
+
       .col-4
         h4("d-flex justify-content-between align-items-center mb-3") 
           span.text-muted Your Cart
