@@ -1,0 +1,15 @@
+.flexdatalist-results { 
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.item-img { 
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #D3D3D3;
+}
+
+.item-name {
+    margin-left: 10px;
+}

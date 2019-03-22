@@ -1,7 +1,9 @@
 extends layout
 
-block content
+block stylesheets
+  link(rel="stylesheet" href="/stylesheets/autocomplete.css")
 
+block content
   .container-fluid
     .row
       .col-8
@@ -13,7 +15,10 @@ block content
                 .row 
                   .col-lg-5
                     label(for="productName") Product Name
-                    input(type="text" class="form-control" data-min-length='1' id="productName" name="productName" required)
+                    input(type='text'
+                      class='form-control flexdatalist'
+                      data-min-length='1'
+                      name='country_name_capital_continent')
                   .col-lg-2
                     label(for="quantity") Quantity
                     input(type="number" class="form-control" id="quantity" name="quantity" required)
@@ -122,9 +127,6 @@ block content
             h6(class="card-header secondary bg-light text-center" data-toggle="collapse" data-target="#collapseReview" aria-expanded="true" aria-controls="collapseReview") Review
             div(id="collapseReview" class="collapse" aria-labelledby="collapseReview" data-parent="#accordion")
               .card-body Content to be added.
-
-
-
       .col-4
         h4("d-flex justify-content-between align-items-center mb-3") 
           span.text-muted Your Cart
@@ -148,3 +150,7 @@ block content
           li(class="list-group-item d-flex justify-content-between lh-condensed")
             span Total (USD)
             strong $20
+
+block scripts
+  script(src="/javascripts/jquery.flexdatalist.min.js")
+  script(src="/javascripts/autocomplete.js")
