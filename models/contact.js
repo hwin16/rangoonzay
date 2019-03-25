@@ -10,16 +10,18 @@ const ContactSchema = new mongoose.Schema({
     },
     name: String, 
     date_of_birth: Date, 
-    phone_numbers: [{ 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'PhoneNumber' 
-    }],
-    addresses: [{ 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Address' 
-    }],
+    phone_number_1: String,
+    phone_number_2: String,
+    address_1: String,
+    address_2: String,
+    city: String, 
+    state: String,
     facebook_name: String, 
     facebook_url: String
+}, { 
+    toObject: { 
+        getters: true
+    }
 }); 
 
 ContactSchema.pre('remove', function(next) { 

@@ -14,4 +14,6 @@ router.post('/:shop_id/contacts/:contact_id/delete', contactController.contact_d
 
 router.post('/:shop_id/transactions/create', transactionController.transaction_create);
 
+router.get('/:shop_id/api/contacts', contactController.api_contact_list);
+
 module.exports = router;
