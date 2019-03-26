@@ -5,6 +5,8 @@ $(function () {
     $('#productAdd').click(function (e) {
         e.preventDefault();
 
+        $('#list').css('display', 'block');
+
         let productName = $('#productName').val();
         let quantity = $('#quantity').val();
         let unitPrice = $('#price').val();

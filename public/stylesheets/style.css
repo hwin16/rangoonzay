@@ -64,6 +64,10 @@ html, body {
   overflow: hidden;
 }
 
+.show {
+    display: block !important;
+}
+
 .flexdatalist-results {
     position: absolute;
     top: 0;
