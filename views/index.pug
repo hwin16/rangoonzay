@@ -1,7 +1,7 @@
 extends layout
 
 block stylesheets
-  link(rel="stylesheet" href="/stylesheets/autocomplete.css")
+    link(rel="stylesheet" href="/stylesheets/autocomplete.css")
 
 block content
   .container-fluid
@@ -9,64 +9,56 @@ block content
       .col-8
         div(id="accordion")
           div(class="card mt-2 bg-white shadow rounded")
-            h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseProduct") Product
-            div(id="collapseProduct" class="collapse show" aria-labelledby="collapseProduct" data-parent="#accordion")
+            h6(class="card-header bg-light text-center" 
+                data-toggle="collapse" 
+                data-target="#collapseProduct" 
+                aria-expanded="true" 
+                aria-controls="collapseProduct") Product
+            div(id="collapseProduct" 
+                class="collapse show" 
+                aria-labelledby="collapseProduct" 
+                data-parent="#accordion")
               .card-body 
                 .row 
                   .col-lg-5
                     label(for="productName") Product Name
-                    input(type='text'
-                      class='form-control flexdatalist'
-                      data-min-length='1'
-                      name='country_name_capital_continent')
+                    input(type="text"
+                        id="productName"
+                        class="form-control flexdatalist"
+                        data-min-length="1"
+                        name="country_name_capital_continent")
                   .col-lg-2
                     label(for="quantity") Quantity
-                    input(type="number" class="form-control" id="quantity" name="quantity" required)
+                    input(type="number" 
+                        class="form-control" 
+                        id="quantity" 
+                        name="quantity" required)
                   .col-lg-5
-                    label(for="price") Price
+                    label(for="price") Unit Price
                     .input-group
-                      input(type="number" class="form-control" id="quantity" name="quantity" required)
+                      input(type="number" class="form-control" id="price" name="price" required)
                       .input-group-append
-                        span(class="input-group-text") MMK
+                        span(class="input-group-text" style="border-radius: 0 5px 5px 0;") MMK
                       span 
-                        button(class="btn btn-outline-dark ml-2") ADD
-                  
-                    
+                        button(class="btn btn-outline-dark ml-2" type="button" id="productAdd") ADD
                 hr
-                button(class="btn btn-outline-dark float-right mb-3" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer" type="button") Continue  
-
-                //- ul.list-unstyled
-                //-   li.media
-                //-     img(src="images/ax.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                //-     .media-body 
-                //-       h6.mt-3 A|X Bomber Jacket
-                //-         span 
-                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
-                //-       p $200
-                //-   hr
-
-                //-   li.media.my-2
-                //-     img(src="images/ax1.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                //-     .media-body 
-                //-       h6.mt-3 A|X Jacket with Hood
-                //-         span 
-                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
-                //-       p $180
-                //-   hr
-
-                //-   li.media.my-2
-                //-     img(src="images/ax2.jpg" width="64px" height="64px" class="mr-3 img-thumbnail")
-                //-     .media-body 
-                //-       h6.mt-3 A|X Bomber in Logo Fabric
-                //-         span 
-                //-           button.btn.btn-outline-dark.btn-sm.float-right ADD
-                //-       p $320
-                //-   hr
-           
+                button(class="btn btn-outline-dark float-right mb-3" 
+                    data-toggle="collapse" 
+                    data-target="#collapseCustomer" 
+                    aria-expanded="true" 
+                    aria-controls="collapseCustomer" 
+                    type="button") Continue  
 
           div(class="card mt-2 bg-white shadow rounded")
-            h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapseCustomer" aria-expanded="true" aria-controls="collapseCustomer") Customer
-            div(id="collapseCustomer" class="collapse" aria-labelledby="collapseCustomer" data-parent="#accordion")
+            h6(class="card-header bg-light text-center" 
+                data-toggle="collapse" 
+                data-target="#collapseCustomer" 
+                aria-expanded="true" 
+                aria-controls="collapseCustomer") Customer
+            div(id="collapseCustomer" 
+                class="collapse" 
+                aria-labelledby="collapseCustomer" 
+                data-parent="#accordion")
               .card-body 
                 .form
                   form(action="/shops/:shop_id/contacts/create" class="needs-validation" method="post" novalidate)
@@ -118,39 +110,45 @@ block content
                             span(class="input-group-text") @
                           input(type="email" class="form-control" id="email" name="email" required)
                     hr
-                    button(class="btn btn-outline-dark float-right mb-3" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt" type="button") Continue
+                    button(class="btn btn-outline-dark float-right mb-3" 
+                        data-toggle="collapse" 
+                        data-target="#collapsePayment" 
+                        aria-expanded="true" 
+                        aria-controls="collapsePaymemt" 
+                        type="button") Continue
           div(class="card mt-2 bg-white shadow rounded")
-            h6(class="card-header bg-light text-center" data-toggle="collapse" data-target="#collapsePayment" aria-expanded="true" aria-controls="collapsePaymemt") Payment
-            div(id="collapsePayment" class="collapse" aria-labelledby="collapsePayment" data-parent="#accordion")
+            h6(class="card-header bg-light text-center" 
+                data-toggle="collapse" 
+                data-target="#collapsePayment" 
+                aria-expanded="true" 
+                aria-controls="collapsePaymemt") Payment
+            div(id="collapsePayment" 
+                class="collapse" 
+                aria-labelledby="collapsePayment" 
+                data-parent="#accordion")
               .card-body Content to be added.
           div(class="card mt-2 mb-2 bg-white shadow rounded")
-            h6(class="card-header secondary bg-light text-center" data-toggle="collapse" data-target="#collapseReview" aria-expanded="true" aria-controls="collapseReview") Review
-            div(id="collapseReview" class="collapse" aria-labelledby="collapseReview" data-parent="#accordion")
+            h6(class="card-header secondary bg-light text-center" 
+                data-toggle="collapse" 
+                data-target="#collapseReview" 
+                aria-expanded="true" 
+                aria-controls="collapseReview") Review
+            div(id="collapseReview" 
+                class="collapse" 
+                aria-labelledby="collapseReview" 
+                data-parent="#accordion")
               .card-body Content to be added.
       .col-4
-        h4("d-flex justify-content-between align-items-center mb-3") 
+        h4(class="d-flex justify-content-between align-items-center mt-2") 
           span.text-muted Your Cart
-          span(class="badge badge-secondary badge-pill" style="float: right;") 3
-        ul.list-group
-          li(class="list-group-item d-flex justify-content-between lh-condensed")
-            div 
-              h6.my-0 Product Name
-              small.text-muted Brief Description
-            span.text-muted $12
-          li(class="list-group-item d-flex justify-content-between lh-condensed")
-            div 
-              h6.my-0 Second Product Name
-              small.text-muted Brief Description
-            span.text-muted $6
-          li(class="list-group-item d-flex justify-content-between lh-condensed")
-            div 
-              h6.my-0 Third Product Name
-              small.text-muted Brief Description
-            span.text-muted $2
-          li(class="list-group-item d-flex justify-content-between lh-condensed")
-            span Total (USD)
-            strong $20
-
+          span(class="badge badge-secondary badge-pill float-right" id="itemsInCart") 0
+        ul(class="list-group mb-2" id="list" style="display: none;")
+          
+        .card(style="background-color: rgb(233, 236, 239);")
+            .card-body
+                div Total (MMK) :
+                    span(class="float-right" id="finalPrice") 0 
 block scripts
-  script(src="/javascripts/jquery.flexdatalist.min.js")
-  script(src="/javascripts/autocomplete.js")
+    script(src="/javascripts/jquery.flexdatalist.min.js")
+    script(src="/javascripts/autocomplete.js")
+    script(src="/javascripts/javascript.js")
