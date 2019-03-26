@@ -1,0 +1,45 @@
+h6(class="card-header bg-light text-center" 
+    data-toggle="collapse" 
+    data-target="#collapseProduct" 
+    aria-expanded="true" 
+    aria-controls="collapseProduct") Product
+div(id="collapseProduct" 
+    class="collapse show" 
+    aria-labelledby="collapseProduct" 
+    data-parent="#accordion")
+    .card-body 
+        .row 
+            .col-lg-5
+                label(for="productName") Product Name
+                input(type="text"
+                    id="productName"
+                    class="form-control flexdatalist"
+                    data-min-length="1"
+                    name="country_name_capital_continent")
+            .col-lg-2
+                label(for="quantity") Quantity
+                input(type="number" 
+                    class="form-control" 
+                    id="quantity" 
+                    name="quantity" required)
+            .col-lg-5
+                label(for="price") Unit Price
+                .input-group
+                    input(type="number" 
+                        class="form-control" 
+                        id="price" 
+                        name="price" required)
+                    .input-group-append
+                        span(class="input-group-text" 
+                            style="border-radius: 0 5px 5px 0;") MMK
+                    span 
+                        button(class="btn btn-outline-dark ml-2" 
+                            type="button" 
+                            id="productAdd") ADD
+        hr
+        button(class="btn btn-outline-dark float-right mb-3" 
+            data-toggle="collapse" 
+            data-target="#collapseCustomer" 
+            aria-expanded="true" 
+            aria-controls="collapseCustomer" 
+            type="button") Continue  

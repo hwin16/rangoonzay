@@ -1,65 +1,74 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet' 
-        href='/stylesheets/style.css')
-    link(
-        rel="stylesheet"
-        href="/stylesheets/jquery.flexdatalist.min.css")
-    link(rel='stylesheet' 
-        href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
-        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
-        crossorigin='anonymous')
-    link(rel="stylesheet" 
-        href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
-        crossorigin="anonymous")
+    head
+        title= title
+        link(rel='stylesheet' 
+            href='/stylesheets/style.css')
+        link(
+            rel="stylesheet"
+            href="/stylesheets/jquery.flexdatalist.min.css")
+        link(rel='stylesheet' 
+            href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' 
+            integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' 
+            crossorigin='anonymous')
+        link(rel="stylesheet" 
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+            crossorigin="anonymous")
 
-    block stylesheets
+        block stylesheets
 
-    script(src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
-        crossorigin="anonymous")
-    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
-        crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+            crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous")
 
-    block scripts
-  body
-    nav(class="navbar navbar-expand-md navbar-light d-flex flex-row-reverse" id="top-nav")
-      div(class="navbar-nav")
-        a(class="nav-item nav-link" href="")
-          i(class="fas fa-home fa-lg")
-        a(class="nav-item nav-link" href="")
-          i(class="fas fa-sign-out-alt fa-lg")
+        block scripts
 
-    .container-fluid
-      .row  
-        .col-sm-2
-            nav(class="nav flex-column")
-              a(class="nav-item nav-link active mt-1" href="")
-                div
-                  i(class="fas fa-credit-card fa-lg")
-                div
-                  p Transaction
-              a(class="nav-item nav-link" href="") 
-                div
-                  i(class="fas fa-box fa-lg")
-                div
-                  p Inventory
-              a(class="nav-item nav-link" href="") 
-                div
-                  i(class="fas fa-file-invoice-dollar fa-lg")
-                div
-                  p Receipt         
-              a(class="nav-item nav-link" href="/m/shops/xxx/contacts") 
-                div
-                  i(class="fas fa-file-invoice-dollar fa-lg")
-                div
-                  p Contact        
-        .col-sm-10
-          block content
+    body
+        nav(class="navbar navbar-expand-md navbar-light d-flex flex-row-reverse" 
+            id="top-nav")
+            div(class="navbar-nav")
+                a(class="nav-item nav-link" 
+                    href="")
+                    i(class="fas fa-home fa-lg")
+                a(class="nav-item nav-link" 
+                    href="")
+                    i(class="fas fa-sign-out-alt fa-lg")
+
+        .container-fluid
+            .row  
+                .col-sm-2
+                    nav(class="nav flex-column")
+                        a(class="nav-item nav-link active mt-1" 
+                            href="")
+                            div
+                                i(class="fas fa-credit-card fa-lg")
+                            div
+                                p Transaction
+                        a(class="nav-item nav-link" 
+                            href="") 
+                            div
+                                i(class="fas fa-box fa-lg") 
+                            div
+                                p Inventory
+                        a(class="nav-item nav-link" 
+                            href="") 
+                            div
+                                i(class="fas fa-file-invoice-dollar fa-lg")
+                            div
+                                p Receipt         
+                        a(class="nav-item nav-link" 
+                            href="/m/shops/xxx/contacts") 
+                            div
+                                i(class="fas fa-file-invoice-dollar fa-lg")
+                            div
+                                p Contact        
+                .col-sm-10
+                    block content
+    

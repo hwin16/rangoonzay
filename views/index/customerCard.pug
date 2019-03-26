@@ -1,0 +1,88 @@
+h6(class="card-header bg-light text-center" 
+    data-toggle="collapse" 
+    data-target="#collapseCustomer" 
+    aria-expanded="true" 
+    aria-controls="collapseCustomer") Customer
+div(id="collapseCustomer" 
+    class="collapse" 
+    aria-labelledby="collapseCustomer" 
+    data-parent="#accordion")
+    .card-body 
+        form(action="/shops/:shop_id/contacts/create" 
+            class="needs-validation" 
+            method="post" novalidate)
+            .row.mb-3
+                .col-md-6
+                    label(for="name") Name
+                    input(type="text" 
+                        class="form-control" 
+                        id="name" 
+                        name="name" required)
+                    .invalid-feedback Valid name is required.
+                .col-md-6
+                    label(for="facebookName") Facebook Name
+                        span.text-muted  (Optional)
+                    input(type="text" 
+                        class="form-control" 
+                        id="facebookName" 
+                        name="facebookName")
+            .row.mb-3
+                .col
+                    label(for="address") Address
+                    input(type="text" 
+                        class="form-control" 
+                        id="address" 
+                        name="address[]" required)
+                    .invalid-feedback Valid address is required.
+            .row.mb-3
+                .col-md-4
+                    label(for="city") City
+                    select(class="custom-select d-block w-100" 
+                        id="city" required)
+                        option(value="yangon" selected) Yangon
+                        option(value="mandalay") Mandalay
+                .col-md-4
+                    label(for="state") State
+                    select(class="custom-select d-block w-100" 
+                        id="state" required)
+                        option(value="yangon" selected) Yangon
+                        option(value="mandalay") Mandalay
+                .col-md-4
+                    label(for="country") Country
+                    select(class="custom-select d-block w-100" 
+                        id="country" required)
+                        option(value="myanmar" selected) Myanmar 
+            .row.mb-3
+                .col-md-6
+                    label(for="phoneNumber") Phone Number
+                    input(type="number" 
+                        class="form-control" 
+                        id="phoneNumber" 
+                        name="phone_numbers[phone_number]{}" required)
+                    .invalid-feedback Valid phone number is required.
+                .col-md-6
+                    label(for="phoneNumber2") Phone Number 2
+                        span.text-muted  (Optional)
+                    input(type="number" 
+                        class="form-control" 
+                        id="phoneNumber2" 
+                        name="phone_numbers[phone_number]{}")
+                    .invalid-feedback Valid phone number is required.
+            .row.mb-3
+                .col
+                    label(for="email") Email
+                        span.text-muted  (Optional) 
+                    .input-group
+                        .input-group-prepend
+                            span(class="input-group-text") @
+                        input(type="email" 
+                            class="form-control" 
+                            id="email" 
+                            name="email" required)
+            hr
+            button(class="btn btn-outline-dark float-right mb-3" 
+                data-toggle="collapse" 
+                data-target="#collapsePayment" 
+                aria-expanded="true" 
+                aria-controls="collapsePaymemt" 
+                type="button") Continue
