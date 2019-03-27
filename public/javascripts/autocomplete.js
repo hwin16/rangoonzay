@@ -25,13 +25,13 @@ let d = [
     }, 
 ];
 
-$('.flexdatalist').flexdatalist({
-    minLength: 1,
-    selectionRequired: true,
-    visibleProperties: ["img", "name", "capital", "continent"],
-    iconProperty: "img",
-    searchIn: 'name',
-    data: d 
+$(document).ready(function() { 
+    $(".flexdatalist").flexdatalist({
+        minLength: 1,
+        selectionRequired: true,
+        visibleProperties: ["img", "name", "capital", "continent"],
+        iconProperty: "img",
+        searchIn: "name",
+        data: d 
+    });
 });
-
-$('.item-img').addClass('border border-light');
