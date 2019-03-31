@@ -28,7 +28,6 @@ let d = [
 $(document).ready(function() { 
     $(".flexdatalist").flexdatalist({
         minLength: 1,
-        selectionRequired: true,
         visibleProperties: ["img", "name", "capital", "continent"],
         iconProperty: "img",
         searchIn: "name",
