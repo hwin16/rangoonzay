@@ -1,72 +1,111 @@
-* {
-  padding: 0;
-  margin: 0;
+body {
+    font-size: 0.875rem;
 }
 
-html, body {
-  background-color: rgb(248, 249, 250);
-  margin: 0;
-  padding: 0;
+/* Feather icons stylings */
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
 }
 
-#top-nav {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  z-index: 1;
+/* Font size for select options & input texts */
+
+.custom-select {
+    font-size: 0.875rem;
 }
 
-.navbar {
-  background-color: #3D4142;
+.input-group-text {
+    font-size: 0.875rem;
 }
 
-.navbar i {
-  color: white;
+/* Sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
-.list-group {
-  margin-top: 20px;
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
 }
 
-.container-fluid {
-  background-color: rgb(248, 249, 250);
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+    }
 }
 
-.container-fluid .row .col-sm-2 nav {
-  margin-top: 15px;
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
 }
 
-.container-fluid .row .col-sm-2 nav a {
-  display: grid;
-  grid-template-columns: 25% 75%;
-  color: black;
-  justify-content: center;
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
 }
 
-.container-fluid .row .col-sm-2 nav a:hover {
-  color: lightslategray;
+.sidebar .nav-link.active {
+    color: #007bff;
 }
 
-.container-fluid .row .col-sm-2 {
-  position: fixed;
-  margin-top: 40px;
-  background-color: rgb(233, 236, 239);
-  height: 100vh;
-  width: 240px;
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+    color: inherit;
 }
 
-.container-fluid .row .col-sm-10 {
-  position: relative;
-  margin-left: 240px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  z-index: 0;
-  /* overflow: hidden; */
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
 }
+
+/* Main content */
+
+[role="main"] {
+    padding-top: 133px;
+    /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+    [role="main"] {
+        padding-top: 60px;
+        /* Space for fixed navbar */
+    }
+}
+
+/* Navbar */
+
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+/* Toggle class for adding items in cart */
 
 .show {
     display: block !important;
 }
+
+/* Flexdatalist stylings */
 
 .flexdatalist-results {
     position: absolute;
@@ -84,38 +123,40 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 .flexdatalist-results li {
     border-bottom: 1px solid #ccc;
     padding: 8px 15px;
     font-size: 14px;
     line-height: 20px;
 }
+
 .flexdatalist-results li span.highlight {
     font-weight: 700;
     text-decoration: underline;
 }
+
 .flexdatalist-results li.active {
     background: #2B82C9;
     color: #fff;
     cursor: pointer;
 }
+
 .flexdatalist-results li.no-results {
     font-style: italic;
     color: #888;
 }
 
-/**
- * Grouped items
- */
- 
 .flexdatalist-results li.group {
     background: #F3F3F4;
     color: #666;
     padding: 8px 8px;
 }
+
 .flexdatalist-results li .group-name {
     font-weight: 700;
 }
+
 .flexdatalist-results li .group-item-count {
     font-size: 85%;
     color: #777;
@@ -123,15 +164,13 @@ html, body {
     padding-left: 10px;
 }
 
-/**
- * Multiple items
- */
 
 .flexdatalist-multiple:before {
     content: '';
     display: block;
     clear: both;
 }
+
 .flexdatalist-multiple {
     width: 100%;
     margin: 0;
@@ -140,21 +179,25 @@ html, body {
     text-align: left;
     cursor: text;
 }
+
 .flexdatalist-multiple.disabled {
     background-color: #eee;
     cursor: default;
 }
+
 .flexdatalist-multiple:after {
     content: '';
     display: block;
     clear: both;
 }
+
 .flexdatalist-multiple li {
     display: inline-block;
     position: relative;
     margin: 5px;
     float: left;
 }
+
 .flexdatalist-multiple li.input-container,
 .flexdatalist-multiple li.input-container input {
     border: none;
@@ -171,10 +214,12 @@ html, body {
     color: #777;
     line-height: 20px;
 }
+
 .flexdatalist-multiple li.toggle {
     cursor: pointer;
     transition: opacity ease-in-out 300ms;
 }
+
 .flexdatalist-multiple li.toggle.disabled {
     text-decoration: line-through;
     opacity: 0.80;
@@ -191,6 +236,7 @@ html, body {
     right: 0;
     opacity: 0.70;
 }
+
 .flexdatalist-multiple li.value span.fdl-remove:hover {
     opacity: 1;
 }
