@@ -1,13 +1,23 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let InventorySchema = new mongoose.Schema({
-    seller_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+const InventorySchema = new mongoose.Schema({
+    seller_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     name: String,
-    brand: { type: mongoose.Schema.Types.ObjectId, ref: 'Brand' },
+    brand: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Brand'
+    },
     color: String,
-    quantity: Number,
+    quantity: { 
+        type: Number,
+        default: 0
+    },
     list_price: Number,
     img_urls: [{ type: String }],
+    barcode: String,
     item_details: String
 });
 
