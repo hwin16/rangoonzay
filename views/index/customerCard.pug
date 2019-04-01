@@ -1,53 +1,53 @@
-h6.card-header.bg-light.text-center(data-toggle='collapse', data-target='#collapseCustomer', aria-expanded='true', aria-controls='collapseCustomer') Customer
-#collapseCustomer.collapse(aria-labelledby='collapseCustomer', data-parent='#accordion')
+h6.card-header.bg-light.text-center(data-toggle="collapse", data-target="#collapseCustomer", aria-expanded="true", aria-controls="collapseCustomer") Customer
+#collapseCustomer.collapse(aria-labelledby="collapseCustomer", data-parent="#accordion")
     .card-body
-        form.needs-validation(action='/shops/:shop_id/contacts/create', method='post', novalidate='')
+        form.needs-validation(action="/shops/:shop_id/contacts/create", method="post", novalidate="")
             .row.mb-3
                 .col-md-6
-                    label(for='name') Name
-                    input#name.form-control(type='text', name='name', required='')
+                    label(for="name") Name
+                    input#name.form-control(type="text", name="name", required="")
                     .invalid-feedback Valid name is required.
                 .col-md-6
-                    label(for='facebookName') Facebook Name
+                    label(for="facebookName") Facebook Name
                         span.text-muted  (Optional)
-                    input#facebookName.form-control(type='text', name='facebookName')
+                    input#facebookName.form-control(type="text", name="facebookName")
             .row.mb-3
                 .col
-                    label(for='address') Address
-                    input#address.form-control(type='text', name='address[]', required='')
+                    label(for="address") Address
+                    input#address.form-control(type="text", name="address[]", required="")
                     .invalid-feedback Valid address is required.
             .row.mb-3
                 .col-md-4
-                    label(for='city') City
-                    select#city.custom-select.d-block.w-100(required='')
-                        option(class='font-size: 0.875rem;', value='yangon', selected='') Yangon
-                        option(value='mandalay') Mandalay
+                    label(for="city") City
+                    select#city.custom-select.d-block.w-100(required="")
+                        option(class="font-size: 0.875rem;", value="yangon", selected="") Yangon
+                        option(value="mandalay") Mandalay
                 .col-md-4
-                    label(for='state') State
-                    select#state.custom-select.d-block.w-100(required='')
-                        option(value='yangon', selected='') Yangon
-                        option(value='mandalay') Mandalay
+                    label(for="state") State
+                    select#state.custom-select.d-block.w-100(required="")
+                        option(value="yangon", selected="") Yangon
+                        option(value="mandalay") Mandalay
                 .col-md-4
-                    label(for='country') Country
-                    select#country.custom-select.d-block.w-100(required='')
-                        option(value='myanmar', selected='') Myanmar 
+                    label(for="country") Country
+                    select#country.custom-select.d-block.w-100(required="")
+                        option(value="myanmar", selected="") Myanmar 
             .row.mb-3
                 .col-md-6
-                    label(for='phoneNumber') Phone Number
-                    input#phoneNumber.form-control(type='number', name='phone_numbers[phone_number]{}', required='')
+                    label(for="phoneNumber") Phone Number
+                    input#phoneNumber.form-control(type="number", name="phone_numbers[phone_number]{}", required="")
                     .invalid-feedback Valid phone number is required.
                 .col-md-6
-                    label(for='phoneNumber2') Phone Number 2
+                    label(for="phoneNumber2") Phone Number 2
                         span.text-muted  (Optional)
-                    input#phoneNumber2.form-control(type='number', name='phone_numbers[phone_number]{}')
+                    input#phoneNumber2.form-control(type="number", name="phone_numbers[phone_number]{}")
                     .invalid-feedback Valid phone number is required.
             .row.mb-3
                 .col
-                    label(for='email') Email
+                    label(for="email") Email
                         span.text-muted  (Optional) 
                     .input-group
                         .input-group-prepend
                             span.input-group-text @
-                        input#email.form-control(type='email', name='email', required='')
+                        input#email.form-control(type="email", name="email")
             hr
-            button.btn.btn-outline-dark.float-right.mb-3(data-toggle='collapse', data-target='#collapsePayment', aria-expanded='true', aria-controls='collapsePaymemt', type='button') Continue
+            button.btn.btn-outline-dark.float-right.mb-3(data-toggle="collapse", data-target="#collapsePayment", aria-expanded="true", aria-controls="collapsePaymemt", type="button") Continue
