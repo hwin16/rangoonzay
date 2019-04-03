@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' 
+            content='width=device-width initial-scale=1 shrink-to-fit=no')
+        link(rel='stylesheet', 
+            href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
+            integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', 
+            crossorigin='anonymous')
+        style.
+            .carousel-control-next-icon { 
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+            } 
+            .carousel-control-prev-icon { 
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+            } 
+
+            .text-red { 
+                color: red;
+            }
+
+            #brand-text { 
+                font-size: 14px;
+            }
+    
+        title Black Friday
+    body
+        .container
+            .row
+                nav(aria-label='breadcrumb')
+                    ol.breadcrumb.bg-white
+                        li.breadcrumb-item
+                            a(href='/') Home
+                        li.breadcrumb-item
+                            a(href='#') Branded MG
+                        li.breadcrumb-item.active(aria-current='page') Teresa Skirt in Red
+            .row.mt-1
+                .col-sm-4.px-3
+                    #imgCarousel.carousel.slide(data-ride='carousel')
+                        ol.carousel-indicators
+                            li.bg-dark.active(data-target='#imgCarousel', data-slide-to='0')
+                            li.bg-dark(data-target='#imgCarousel', data-slide-to='1')
+                            li.bg-dark(data-target='#imgCarousel', data-slide-to='2')
+                        .carousel-inner
+                            .carousel-item.active
+                                img.d-block.w-100(src='/images/ar-1.jpg', alt='...')
+                            .carousel-item
+                                img.d-block.w-100(src='/images/ar-2.jpg', alt='...')
+                            .carousel-item
+                                img.d-block.w-100(src='/images/tb.jpg', alt='...')
+                        a.carousel-control-prev(href='#imgCarousel', role='button', data-slide='prev')
+                            span.carousel-control-prev-icon(aria-hidden='true')
+                            span.sr-only Previous
+                        a.carousel-control-next(href='#imgCarousel', role='button', data-slide='next')
+                            span.carousel-control-next-icon(aria-hidden='true')
+                            span.sr-only Next
+                .col-sm-5
+                    .div.border-bottom.pt-3
+                        h3 Teresa skirt in red
+                        p#brand-text by
+                            span  
+                                a(href="#") Branded MG
+                    .div.mt-2.py-0
+                        .row
+                            .col-3.text-center List Price: 
+                            .col
+                                del.text-red 53,500 MMK
+                        .row
+                            .col-3.text-center Now:
+                            .col 13,500 MMK
+                        .row
+                            .col-3.text-center You save:
+                            .col 40,000 MMK
+                    h5.my-4 Code:
+                        span  MDS0000101
+
+                .col-sm-3
+                    .card.card-body
+                        h5.border-bottom.card-title.pb-2 Delivery
+                        p.card-text Pick up or ship to all 14 states
+
+                        h5.border-bottom.card-title.pb-2 Payment
+                        p.card-text Cash on Delivery
+
+                        button.btn.btn-primary.mt-2 Add to Cart
+                        button.btn.btn-primary.mt-2 Checkout
+
+        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', 
+            integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', 
+            crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', 
+            integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', 
+            crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', 
+            integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', 
+            crossorigin='anonymous')

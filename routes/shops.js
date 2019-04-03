@@ -24,5 +24,4 @@ router.get('/:shop_id/inventories', inventoryController.view_inventory);
 router.get('/:shop_id/api/inventories', inventoryController.inventory_list); 
 router.post('/:shop_id/api/inventories/create', inventoryController.inventroy_create); 
 
-
 module.exports = router;
