@@ -13,3 +13,7 @@ exports.product_detail = (req, res, next) => {
         next(err);
     }
 }
+
+exports.test_page = (req, res) => { 
+    res.render('mInventory');
+}

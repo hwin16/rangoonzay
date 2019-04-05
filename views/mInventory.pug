@@ -1,0 +1,96 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', 
+            content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+        link(rel='stylesheet', 
+            href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
+            integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', 
+            crossorigin='anonymous')
+
+        style.
+            .dotted-border { 
+                border-style: dashed;
+            }
+
+        title Hello, world!
+    body
+        .container
+            .row
+                .col 
+                    // Large modal
+                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='.bd-example-modal-lg') Large modal
+                    .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+                        .modal-dialog
+                            .modal-content
+                                .modal-header
+                                    h5#exampleModalLabel.modal-title Add Inventory
+                                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                        span(aria-hidden='true') ×
+                                .modal-body
+                                    form
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputName') Name
+                                            .col-sm-9
+                                                input#inputName.form-control.text-center(type='text', placeholder='Name')
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputCategory') Category
+                                            .col-sm-9
+                                                input#inputCategory.form-control.text-center(type='text', placeholder='Category')
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputBrand') Brand
+                                            .col-sm-9
+                                                input#inputBrand.form-control.text-center(type='text', placeholder='Brand')
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputQuantity') Quantity
+                                            .col-sm-9
+                                                input#inputQuantity.form-control.text-center(type='number', placeholder='Quantity')
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputBuyingPrice') Buying Price
+                                            .col-sm-9
+                                                input#inputBuyingPrice.form-control.text-center(type='number', placeholder='Buying Price')
+                                        .form-group.row
+                                            label.col-sm-3.col-form-label(for='inputSellingPrice') Selling Price
+                                            .col-sm-9
+                                                input#inputSellingPrice.form-control.text-center(type='number', placeholder='Selling Price')
+                                        .form-group.row#qrCode
+                                            label.col-sm-3.col-form-label(for='inputQRCode') QR Code
+                                            .col-sm-9
+                                                button.btn.btn-primary(type="button") Generate
+                                        .form-group
+                                            label(for='uploadImages') Upload Images
+                                            .col-sm-12.card.card-body.dotted-border.pb-0
+                                                .row
+                                                    .col-sm-3.mb-4
+                                                        .card.card-body.dotted-border 
+                                                            div.text-center
+                                                                i.fas.fa-plus
+
+                                .modal-footer
+                                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                                    button.btn.btn-primary(type='button') Submit
+        script(defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js" 
+            integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" 
+            crossorigin="anonymous")
+        script(defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" 
+            integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" 
+            crossorigin="anonymous")
+        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', 
+            integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', 
+            crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', 
+            integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', 
+            crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', 
+            integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', 
+            crossorigin='anonymous')
+        script(src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js")
+        script(src="/javascripts/uploadS3.js")
+        script.
+            $(document).ready(function() { 
+                function getHtml(template) { 
+                    return template.join('\n');
+                }
+            });
