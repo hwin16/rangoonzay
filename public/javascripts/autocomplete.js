@@ -25,11 +25,27 @@ let d = [
     }, 
 ];
 
+const brands = [
+    {
+        name: 'MK'
+    }, 
+    {
+        name: 'MA'
+    }, 
+]
+
 $(document).ready(function() { 
     $(".flexdatalist").flexdatalist({
         minLength: 1,
         visibleProperties: ["img", "name", "capital", "continent"],
         iconProperty: "img",
+        searchIn: "name",
+        data: d 
+    });
+
+    $(".brand-flexdatalist").flexdatalist({
+        minLength: 1,
+        visibleProperties: ["name", "capital", "continent"],
         searchIn: "name",
         data: d 
     });

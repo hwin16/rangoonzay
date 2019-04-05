@@ -3,8 +3,12 @@ const userController = require('../controllers/userController');
 const contactController = require('../controllers/contactController'); 
 const transactionController = require('../controllers/transactionController'); 
 const inventoryController = require('../controllers/inventoryController'); 
+const shopController = require('../controllers/shopController');
 
 const router = express.Router();
+
+// GET /
+router.get('/', shopController.shop_home); 
 
 // contacts 
 router.get('/:shop_id/contacts/', contactController.contact_list);
