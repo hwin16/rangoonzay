@@ -1,0 +1,77 @@
+[role="main"] {
+    padding-top: 56px;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+}
+
+main .cover {
+    background-image: url(/images/coverphoto1.jpeg);
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: 0 50%;
+}
+
+main section .media img {
+    width: 64px;
+    height: 64px;
+}
+
+main section p {
+    font-size: 0.875rem;
+}
+
+main .profile-tab {
+    padding: 10px 10px 0px 5%;
+    background-color: rgb(245, 246, 247);
+    border-bottom: 1px solid lightgray;
+}
+
+main .container h5 {
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+main .container p {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+main a {
+    color: black;
+}
+
+main a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    padding: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.card-img-top {
+    object-fit: contain;
+}
+
+footer {
+    height: 50px;
+    background-color: lightgray;
+}
+
+@media screen and (max-width: 576px) {
+
+    main .cover {
+        background-image: url(/images/coverphoto1.jpeg);
+        height: 150px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: 0 50%;
+    }
+
+}

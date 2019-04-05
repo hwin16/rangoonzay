@@ -1,0 +1,58 @@
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.text-red {
+    color: red;
+}
+
+#brand-text {
+    font-size: 14px;
+}
+
+.feather {
+    color: white;
+}
+
+.fixed-bottom a {
+    color: white;
+}
+
+.fixed-bottom a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.col-sm-5,
+.col-sm-3 {
+    font-size: 0.875rem;
+}
+
+#shoppingCart {
+    display: none;
+}
+
+.container-fluid {
+    background-color: white;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 576px) {
+
+    #shoppingCart {
+        display: block;
+    }
+
+    .col-sm-3 .card button {
+        display: none !important;
+    }
+
+    .container {
+        margin-bottom: 65px;
+    }
+
+}

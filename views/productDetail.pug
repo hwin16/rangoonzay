@@ -7,28 +7,21 @@ html(lang='en')
         meta(property='og:title', content='Teresa Image in red')
         meta(property='og:image', content='/images/ar-1.jpg')
 
+        link(rel='stylesheet', href='/stylesheets/productDetail.css')
         link(rel='stylesheet', 
             href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', 
             integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', 
             crossorigin='anonymous')
-        style.
-            .carousel-control-next-icon { 
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-            } 
-            .carousel-control-prev-icon { 
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-            } 
 
-            .text-red { 
-                color: red;
-            }
-
-            #brand-text { 
-                font-size: 14px;
-            }
-    
+        script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
+        
         title Black Friday
     body
+        .container-fluid.fixed-bottom
+            #shoppingCart.btn.btn-dark.justify-content-center
+                span(data-feather='shopping-cart')
+                span(class='badge badge-pill badge-light ml-1') 5
+
         .container
             .row
                 nav(aria-label='breadcrumb')
@@ -47,11 +40,11 @@ html(lang='en')
                             li.bg-dark(data-target='#imgCarousel', data-slide-to='2')
                         .carousel-inner
                             .carousel-item.active
-                                img.d-block.w-100(src='/images/ar-1.jpg', alt='...')
+                                img.d-block.w-100(src='/images/ts-3.jpg', alt='...')
                             .carousel-item
-                                img.d-block.w-100(src='/images/ar-2.jpg', alt='...')
+                                img.d-block.w-100(src='/images/ts-2.jpg', alt='...')
                             .carousel-item
-                                img.d-block.w-100(src='/images/ar-3.jpg', alt='...')
+                                img.d-block.w-100(src='/images/ts-1.jpg', alt='...')
                         a.carousel-control-prev(href='#imgCarousel', role='button', data-slide='prev')
                             span.carousel-control-prev-icon(aria-hidden='true')
                             span.sr-only Previous
@@ -60,34 +53,37 @@ html(lang='en')
                             span.sr-only Next
                 .col-sm-5
                     .div.border-bottom.pt-3
-                        h3 Teresa skirt in red
+                        h4 Teresa skirt in red
                         p#brand-text by
                             span  
                                 a(href="#") Branded MG
                     .div.mt-2.py-0
                         .row
-                            .col-3.text-center List Price: 
+                            .col-4 List Price: 
                             .col
                                 del.text-red 53,500 MMK
                         .row
-                            .col-3.text-center Now:
+                            .col-4 Now:
                             .col 13,500 MMK
                         .row
-                            .col-3.text-center You save:
+                            .col-4 You save:
                             .col 40,000 MMK
-                    h5.my-4 Code:
+                    h6.my-4 Code:
                         span  MDS0000101
 
                 .col-sm-3
                     .card.card-body
-                        h5.border-bottom.card-title.pb-2 Delivery
+                        h6.border-bottom.card-title.pb-2 Delivery
                         p.card-text Pick up or ship to all 14 states
 
-                        h5.border-bottom.card-title.pb-2 Payment
+                        h6.border-bottom.card-title.pb-2 Payment
                         p.card-text Cash on Delivery
 
                         button.btn.btn-primary.mt-2 Add to Cart
                         button.btn.btn-primary.mt-2 Checkout
+
+        script.
+            feather.replace();
 
         script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', 
             integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', 
@@ -98,3 +94,4 @@ html(lang='en')
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', 
             integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', 
             crossorigin='anonymous')
+      
