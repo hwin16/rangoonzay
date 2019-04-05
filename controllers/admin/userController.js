@@ -1,5 +1,5 @@
 // TODO: DOB is needed
-const User = require('../models/user'); 
+const User = require('../../models/user'); 
 
 exports.user_create = (req, res, next) => { 
     const user = new User({ 

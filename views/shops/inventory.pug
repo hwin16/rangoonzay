@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block stylesheets
     link(rel="stylesheet"
@@ -19,18 +19,15 @@ block scripts
         $(document).ready(function() { 
             $('#table_id').DataTable({
                 ajax: {
-                    url: '/shops/5c8cee745d99d8037fbd0a15/api/contacts',
+                    url: '/shops/5c8cee745d99d8037fbd0a15/api/inventories',
                     dataSrc: 'data'
                 },
                 columns: [
                     { data: 'name' }, 
-                    { data: 'date_of_birth' }, 
-                    { data: 'phone_number_1' }, 
-                    { data: 'address_1' }, 
-                    { data: 'city' }, 
-                    { data: 'state' }, 
-                    { data: 'facebook_name' }, 
-                    { data: 'facebook_url' }
+                    { data: 'brand' }, 
+                    { data: 'color' }, 
+                    { data: 'quantity' }, 
+                    { data: 'list_price' }, 
                 ]
             });
         });
@@ -42,11 +39,8 @@ block content
                 thead
                     tr
                         th Name
-                        th Date of Birth
-                        th Primary Phone Number
-                        th Address
-                        th City
-                        th State
-                        th Facebook Name
-                        th Facebook URL
+                        th Brand
+                        th Color 
+                        th Quantity 
+                        th Buying Price
                 tbody

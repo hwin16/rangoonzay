@@ -1,9 +1,8 @@
 const express = require('express');
-const userController = require('../controllers/userController'); 
-const contactController = require('../controllers/contactController'); 
-const transactionController = require('../controllers/transactionController'); 
-const inventoryController = require('../controllers/inventoryController'); 
-const shopController = require('../controllers/shopController');
+const contactController = require('../controllers/shops/contactController'); 
+const transactionController = require('../controllers/shops/transactionController'); 
+const inventoryController = require('../controllers/shops/inventoryController'); 
+const shopController = require('../controllers/shops/shopController');
 
 const router = express.Router();
 

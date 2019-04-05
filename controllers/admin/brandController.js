@@ -1,5 +1,5 @@
-const Brand = require('../models/brand'); 
-const util = require('../util/tools');
+const Brand = require('../../models/brand'); 
+const util = require('../../util/tools');
 
 exports.create_brand = async (req, res) => { 
     const record = await Brand.findOne({ name: req.body.name }).exec();

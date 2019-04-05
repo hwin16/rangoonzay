@@ -8,7 +8,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const adminRouter = require('./routes/admin'); 
-const clientRouter = require('./routes/client');
+const clientRouter = require('./routes/clients');
 const shopsRouter = require('./routes/shops');
 
 var app = express();
@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', clientRouter);
 app.use('/admin', adminRouter);
+app.use('/clients', clientRouter);
 app.use('/shops', shopsRouter);
 
 // catch 404 and forward to error handler

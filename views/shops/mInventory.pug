@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block stylesheets
     style.
@@ -29,8 +29,13 @@ block content
             .row
                 .col 
                     // Large modal
-                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='.bd-example-modal-lg') Large modal
-                    .modal.fade.bd-example-modal-lg(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+                    button.btn.btn-primary(type='button', 
+                        data-toggle='modal', 
+                        data-target='.bd-example-modal-lg') Large modal
+                    .modal.fade.bd-example-modal-lg(tabindex='-1', 
+                        role='dialog', 
+                        aria-labelledby='myLargeModalLabel', 
+                        aria-hidden='true')
                         .modal-dialog
                             .modal-content
                                 .modal-header

@@ -1,7 +1,7 @@
 const underscore = require('underscore');
 const mongoose = require('mongoose');
-const Contact = require('../models/contact');
-const User = require('../models/user');
+const Contact = require('../../models/contact');
+const User = require('../../models/user');
 
 exports.contact_create = async (req, res) => {
     try {

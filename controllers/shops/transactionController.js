@@ -1,7 +1,7 @@
 const underscore = require('underscore');
 const mongoose = require('mongoose');
-const Transaction = require('../models/transaction'); 
-const util = require('../util/tools');
+const Transaction = require('../../models/transaction'); 
+const util = require('../../util/tools');
 
 exports.transaction_list = async (req, res, next) => { 
     try { 

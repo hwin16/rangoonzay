@@ -1,7 +1,7 @@
-const Inventory = require('../models/inventory');
 const mongoose = require('mongoose');
 const underscore = require('underscore');
-const util = require('../util/tools');
+const Inventory = require('../../models/inventory');
+const util = require('../../util/tools');
 
 exports.view_inventory = (req, res) =>  { 
     res.render('inventory');
