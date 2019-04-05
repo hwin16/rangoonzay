@@ -2,12 +2,17 @@ doctype html
 html
     head
         title= title
+
+        meta(charset='utf-8')
+        meta(name='viewport' 
+            content='width=device-width initial-scale=1 shrink-to-fit=no')
+            
         link(rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
             crossorigin="anonymous")
         link(rel="stylesheet" 
-            href="/stylesheets/style.css")
+            href="/stylesheets/homePageStyle.css")
 
         script(src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -21,17 +26,125 @@ html
         script(src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
 
     body
-        nav.navbar.navbar-dark.fixed-top.bg-dark.flex-md-nowrap.p-0.shadow
-            a.navbar-brand.col-sm-3.col-md-2.mr-0(href="#") 
-                span.mr-1(data-feather="share-2")
-                |   Ease Solutions
-            ul.navbar-nav.px-3
-                li.nav-item.text-nowrap
-                    a.nav-link(href="#")
-                        span(data-feather="log-out")
-                        |   Sign Out
+        nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+            a.navbar-brand(href='/')
+                span(data-feather='share-2')
+                | Ease Soultions
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarCollapse.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                form.form-inline
+                    .input-group
+                        input.form-control(style='width: 300px;', type='text', placeholder='Search Shops', aria-label='Search')
+                        .input-group-append
+                            button.btn.btn-secondary.btn-sm(type='submit')
+                                span(data-feather='search')
 
-        .container-fluid
-            p You are at HOME page 
+        main(role='main')
+            .cover
+            section.shopping
+                .profile-tab
+                    .media.mt-1
+                        img.rounded-circle(src='/images/cover.jpg', alt='Profile Image')
+                        .media-body.ml-2.mt-1
+                            h6 Branded MG Online Shopping
+                            p Here we sell authentic Bonia bags and USA imported cosmetics and clothings.
+                nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                    #navbarNavAltMarkup.collapse.navbar-collapse.justify-content-center
+                        .navbar-nav
+                            a.nav-item.nav-link.mx-4.active(href='/')
+                                | Home
+                                span.sr-only (current)
+                            a.nav-item.nav-link.mx-4(href='/') Handbags
+                            a.nav-item.nav-link.mx-4(href='/') Clothing
+                            a.nav-item.nav-link.mx-4(href='/') Sales
+                .container.mt-3
+                    .row
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ts-1.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ar-2.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ts-3.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/bonia.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ar-1.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ts-1.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        .col-sm-3.col-6
+                            .card.mb-4
+                                a(href="/")
+                                    .embed-responsive.embed-responsive-1by1
+                                        img.card-img-top.embed-responsive-item(src='/images/ar-3.jpg', alt='Card image cap')
+                                    .card-body.pb-0
+                                        h5.card-title Teresa Skirt in Red
+                                        p.mb-0
+                                            | Was 
+                                            del 20000 Ks
+                                        p Now 10000 Ks
+                        
+
+        footer.text-muted
+            .container
+                p.mt-3 This webiste is © by Ease solutions 2019.
+
         script.
             feather.replace();
