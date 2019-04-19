@@ -51,7 +51,7 @@ exports.contact_update = async (req, res, next) => {
 };
 
 exports.contact_list = async (req, res, next) => {
-    res.render('contact');
+    res.render('shops/contact');
 };
 
 exports.contact_detail = async (req, res) => {

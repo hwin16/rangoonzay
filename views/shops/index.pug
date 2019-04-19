@@ -5,29 +5,28 @@ block stylesheets
         href="/stylesheets/autocomplete.css")
 
 block content
-    main.col-md-9.ml-sm-auto.col-lg-10.px-4(role="main")
-        .container-fluid
-            .row
-                .col-8
-                    #accordion
-                        .card.mt-2.bg-white.shadow.rounded
-                            include index/productCard
-                        .card.mt-2.bg-white.shadow.rounded
-                            include index/customerCard
-                        .card.mt-2.bg-white.shadow.rounded
-                            include index/paymentCard
-                        .card.mt-2.mb-2.bg-white.shadow.rounded
-                            include index/reviewCard
-                .col-4
-                    h6.d-flex.justify-content-between.align-items-center.mt-2
-                        span.text-muted Your Cart
-                        span#itemsInCart.badge.badge-secondary.badge-pill.float-right 0
-                    ul#list.list-group.mb-2(style="display: none;")  
-                    .card(style="background-color: rgb(233, 236, 239);")
-                        .card-body
-                            div
-                                | Total (MMK) :
-                                span#finalPrice.float-right 0 
+    .container-fluid
+        .row
+            .col-8
+                #accordion
+                    .card.mt-2.bg-white.shadow.rounded
+                        include index/productCard
+                    .card.mt-2.bg-white.shadow.rounded
+                        include index/customerCard
+                    .card.mt-2.bg-white.shadow.rounded
+                        include index/paymentCard
+                    .card.mt-2.mb-2.bg-white.shadow.rounded
+                        include index/reviewCard
+            .col-4
+                h6.d-flex.justify-content-between.align-items-center.mt-2
+                    span.text-muted Your Cart
+                    span#itemsInCart.badge.badge-secondary.badge-pill.float-right 0
+                ul#list.list-group.mb-2(style="display: none;")  
+                .card(style="background-color: rgb(233, 236, 239);")
+                    .card-body
+                        div
+                            | Total (MMK) :
+                            span#finalPrice.float-right 0 
 
 block scripts
     script(src="/javascripts/jquery.flexdatalist.min.js")

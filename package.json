@@ -18,7 +18,8 @@
     "morgan": "~1.9.0",
     "pug": "^2.0.3",
     "underscore": "^1.9.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "nodemon": "^1.18.10",
